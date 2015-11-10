@@ -1,0 +1,9 @@
+Building SARCoin
+
+See doc/readme-qt.rst for instructions on building SARCoin QT,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of SARCoin.
+
+See doc/build-*.txt for instructions on building SARCoind,
+the intended-for-services, no-graphical-interface, reference
+implementation of SARCoin.
