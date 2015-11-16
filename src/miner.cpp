@@ -550,7 +550,7 @@ void StakeMiner(CWallet *pwallet)
         if (fTryToSync)
         {
             fTryToSync = false;
-            if (vNodes.size() < 3 || nBestHeight < GetNumBlocksOfPeers())
+            if (vNodes.size() < 2 || nBestHeight < GetNumBlocksOfPeers())
             {
                 MilliSleep(60000);
                 continue;
