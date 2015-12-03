@@ -40,8 +40,8 @@ CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // "standard" scrypt target limit
 CBigNum bnProofOfStakeLimit(~uint256(0) >> 20);
 CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 16);
 
-unsigned int nTargetSpacing = 5 * 60;
-unsigned int nStakeMinAge = 60 * 60 * 12; // 12 hours
+unsigned int nTargetSpacing = 1.5 * 60;
+unsigned int nStakeMinAge = 60 * 60 * 8; // 8 hours
 unsigned int nStakeMaxAge = 60 * 60 * 24 * 5; // 5 days         
 unsigned int nModifierInterval = 20 * 60; // time to elapse before new modifier is computed
 
@@ -984,6 +984,10 @@ int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees, int nHeight)
     int64_t nRewardCoinYear;
 
     nRewardCoinYear = COIN_YEAR_REWARD;
+	
+	// Double reward for about the first year
+	if (nHeight > 3200 && nHeight < 345000)
+		nRewardCoinYear = 2 * CENT;
 
     int64_t nSubsidy = nCoinAge * (nRewardCoinYear / COIN) / 365;
 	
@@ -1048,6 +1052,12 @@ static unsigned int GetNextTargetRequired_(const CBlockIndex* pindexLast, bool f
 {
     CBigNum bnTargetLimit = fProofOfStake ? bnProofOfStakeLimit : bnProofOfWorkLimit;
 
+	unsigned int _nTargetSpacing = nTargetSpacing;
+	
+	// Prior to block 3100, use old blocktime of 5 mins
+	if (pindexLast->nHeight + 1 < 3200)
+		_nTargetSpacing = 5 * 60;
+	
     if (pindexLast == NULL)
         return bnTargetLimit.GetCompact(); // genesis block
 
@@ -1062,16 +1072,16 @@ static unsigned int GetNextTargetRequired_(const CBlockIndex* pindexLast, bool f
 	
     if (nActualSpacing < 1)
         nActualSpacing = 1;
-	if (nActualSpacing > nTargetSpacing * 6)
-		nActualSpacing = nTargetSpacing * 6;
+	if (nActualSpacing > _nTargetSpacing * 6)
+		nActualSpacing = _nTargetSpacing * 6;
 
     // ppcoin: target change every block
     // ppcoin: retarget with exponential moving toward target spacing
     CBigNum bnNew;
     bnNew.SetCompact(pindexPrev->nBits);
-    int64_t nInterval = nTargetTimespan / nTargetSpacing;
-    bnNew *= ((nInterval - 1) * nTargetSpacing + nActualSpacing + nActualSpacing);
-    bnNew /= ((nInterval + 1) * nTargetSpacing);
+    int64_t nInterval = nTargetTimespan / _nTargetSpacing;
+    bnNew *= ((nInterval - 1) * _nTargetSpacing + nActualSpacing + nActualSpacing);
+    bnNew /= ((nInterval + 1) * _nTargetSpacing);
 
     if (bnNew <= 0 || bnNew > bnTargetLimit)
         bnNew = bnTargetLimit;

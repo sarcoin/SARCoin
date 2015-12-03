@@ -48,6 +48,7 @@
     <qresource prefix="/images">
         <file alias="about">res/images/about.png</file>
         <file alias="splash">res/images/splash.png</file>
+		<file alias="backg">res/images/background.jpg</file>
 	<file alias="splash-testnet">res/images/splash-testnet.png</file>
         <file alias="wallet">res/icons/bitcoin.png</file>
     </qresource>
