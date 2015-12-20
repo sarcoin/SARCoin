@@ -3,22 +3,22 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About SARCoin</source>
-        <translation>Vad du behöver veta om SARCoin</translation>
+        <source>About sarcoin</source>
+        <translation>Vad du behöver veta om sarcoin</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;SARCoin&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;SARCoin&lt;/b&gt; version</translation>
+        <source>&lt;b&gt;sarcoin&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;sarcoin&lt;/b&gt; version</translation>
     </message>
     <message>
         <location line="+41"/>
         <source>Copyright © 2009-2014 The Bitcoin developers
 Copyright © 2012-2014 The NovaCoin developers
-Copyright © 2014 The SARCoin developers</source>
+Copyright © 2014 The sarcoin developers</source>
         <translation>Copyright © 2009-2014 The Bitcoin developers
 Copyright © 2012-2014 The NovaCoin developers
-Copyright © 2014 The SARCoin developers</translation>
+Copyright © 2014 The sarcoin developers</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -66,8 +66,8 @@ Denna produkten innehåller mjukvara utvecklad av OpenSSL Project för användni
     </message>
     <message>
         <location line="-46"/>
-        <source>These are your SARCoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>Dessa är dina SARCoin adesser för att mottaga betalningsförsändelser. Du kan även använda olika adresser för varje avsändare för att enkelt hålla koll på vem som har skickat en betalning.</translation>
+        <source>These are your sarcoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>Dessa är dina sarcoin adesser för att mottaga betalningsförsändelser. Du kan även använda olika adresser för varje avsändare för att enkelt hålla koll på vem som har skickat en betalning.</translation>
     </message>
     <message>
         <location line="+60"/>
@@ -81,8 +81,8 @@ Denna produkten innehåller mjukvara utvecklad av OpenSSL Project för användni
     </message>
     <message>
         <location line="+11"/>
-        <source>Sign a message to prove you own a SARCoin address</source>
-        <translation>Signera ett meddelande för att bevisa att du äger SARCoin adressen</translation>
+        <source>Sign a message to prove you own a sarcoin address</source>
+        <translation>Signera ett meddelande för att bevisa att du äger sarcoin adressen</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -96,8 +96,8 @@ Denna produkten innehåller mjukvara utvecklad av OpenSSL Project för användni
     </message>
     <message>
         <location line="-14"/>
-        <source>Verify a message to ensure it was signed with a specified SARCoin address</source>
-        <translation>Verifiera ett meddelande för att försäkra dig över att det var signerat av en specifik SARCoin adress</translation>
+        <source>Verify a message to ensure it was signed with a specified sarcoin address</source>
+        <translation>Verifiera ett meddelande för att försäkra dig över att det var signerat av en specifik sarcoin adress</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -264,8 +264,8 @@ Denna produkten innehåller mjukvara utvecklad av OpenSSL Project för användni
     </message>
     <message>
         <location line="-58"/>
-        <source>SARCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
-        <translation>SARCoin plånboken kommer nu att stängas för att slutföra krypteringen: Kom ihåg att även en krypterad plånboks säkerhet kan äventyras genom keyloggers eller dylika malwares.</translation>
+        <source>sarcoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <translation>sarcoin plånboken kommer nu att stängas för att slutföra krypteringen: Kom ihåg att även en krypterad plånboks säkerhet kan äventyras genom keyloggers eller dylika malwares.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -378,8 +378,8 @@ Denna produkten innehåller mjukvara utvecklad av OpenSSL Project för användni
     </message>
     <message>
         <location line="+6"/>
-        <source>Show information about SARCoin</source>
-        <translation>Visa information om SARCoin</translation>
+        <source>Show information about sarcoin</source>
+        <translation>Visa information om sarcoin</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -428,13 +428,13 @@ Denna produkten innehåller mjukvara utvecklad av OpenSSL Project för användni
     </message>
     <message>
         <location line="-64"/>
-        <source>Send coins to a SARCoin address</source>
-        <translation>Skicka coins till en SARCoin adress</translation>
+        <source>Send coins to a sarcoin address</source>
+        <translation>Skicka coins till en sarcoin adress</translation>
     </message>
     <message>
         <location line="+47"/>
-        <source>Modify configuration options for SARCoin</source>
-        <translation>Modifiera konfigurations-alternativ för SARCoin</translation>
+        <source>Modify configuration options for sarcoin</source>
+        <translation>Modifiera konfigurations-alternativ för sarcoin</translation>
     </message>
     <message>
         <location line="+18"/>
@@ -473,8 +473,8 @@ Denna produkten innehåller mjukvara utvecklad av OpenSSL Project för användni
     </message>
     <message>
         <location line="-202"/>
-        <source>SARCoin</source>
-        <translation>SARCoin</translation>
+        <source>sarcoin</source>
+        <translation>sarcoin</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -483,8 +483,8 @@ Denna produkten innehåller mjukvara utvecklad av OpenSSL Project för användni
     </message>
     <message>
         <location line="+180"/>
-        <source>&amp;About SARCoin</source>
-        <translation>&amp;Om SARCoin</translation>
+        <source>&amp;About sarcoin</source>
+        <translation>&amp;Om sarcoin</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -540,13 +540,13 @@ Denna produkten innehåller mjukvara utvecklad av OpenSSL Project för användni
     <message>
         <location line="+0"/>
         <location line="+60"/>
-        <source>SARCoin client</source>
-        <translation>SARCoin klient</translation>
+        <source>sarcoin client</source>
+        <translation>sarcoin klient</translation>
     </message>
     <message numerus="yes">
         <location line="+75"/>
-        <source>%n active connection(s) to SARCoin network</source>
-        <translation><numerusform>%n aktiv anslutning till SARCoin nätverket</numerusform><numerusform>%n aktiva anslutning till SARCoin nätverket</numerusform></translation>
+        <source>%n active connection(s) to sarcoin network</source>
+        <translation><numerusform>%n aktiv anslutning till sarcoin nätverket</numerusform><numerusform>%n aktiva anslutning till sarcoin nätverket</numerusform></translation>
     </message>
     <message>
         <location line="+40"/>
@@ -585,13 +585,13 @@ Denna produkten innehåller mjukvara utvecklad av OpenSSL Project för användni
     </message>
     <message>
         <location line="-312"/>
-        <source>About SARCoin card</source>
-        <translation>Om SARCoin kortet</translation>
+        <source>About sarcoin card</source>
+        <translation>Om sarcoin kortet</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Show information about SARCoin card</source>
-        <translation>Via information om SARCoin kortet</translation>
+        <source>Show information about sarcoin card</source>
+        <translation>Via information om sarcoin kortet</translation>
     </message>
     <message>
         <location line="+18"/>
@@ -670,8 +670,8 @@ Adress: %4
     <message>
         <location line="-15"/>
         <location line="+15"/>
-        <source>URI can not be parsed! This can be caused by an invalid SARCoin address or malformed URI parameters.</source>
-        <translation>URI:n kan inte tolkas! Detta kan bero på en ogiltig SARCoin adress eller felaktiga URI parametrar.</translation>
+        <source>URI can not be parsed! This can be caused by an invalid sarcoin address or malformed URI parameters.</source>
+        <translation>URI:n kan inte tolkas! Detta kan bero på en ogiltig sarcoin adress eller felaktiga URI parametrar.</translation>
     </message>
     <message>
         <location line="+18"/>
@@ -730,8 +730,8 @@ Adress: %4
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+109"/>
-        <source>A fatal error occurred. SARCoin can no longer continue safely and will quit.</source>
-        <translation>Ett fatalt fel uppstod. SARCoin kan inte fortsätta och stänger programmet.</translation>
+        <source>A fatal error occurred. sarcoin can no longer continue safely and will quit.</source>
+        <translation>Ett fatalt fel uppstod. sarcoin kan inte fortsätta och stänger programmet.</translation>
     </message>
 </context>
 <context>
@@ -1025,7 +1025,7 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     <message>
         <location line="+10"/>
         <source>The label associated with this address book entry</source>
-        <translation>Namnet som kopplats till denna SARCoin-adress</translation>
+        <translation>Namnet som kopplats till denna sarcoin-adress</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -1064,8 +1064,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid SARCoin address.</source>
-        <translation>Den inslagna adressen &quot;%1&quot; är inte en giltig SARCoin adress.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid sarcoin address.</source>
+        <translation>Den inslagna adressen &quot;%1&quot; är inte en giltig sarcoin adress.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1083,8 +1083,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     <message>
         <location filename="../guiutil.cpp" line="+420"/>
         <location line="+12"/>
-        <source>SARCoin-Qt</source>
-        <translation>SARCoin-Qt</translation>
+        <source>sarcoin-Qt</source>
+        <translation>sarcoin-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -1156,13 +1156,13 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start SARCoin after logging in to the system.</source>
-        <translation>Starta SARCoin automatiskt vid inloggning.</translation>
+        <source>Automatically start sarcoin after logging in to the system.</source>
+        <translation>Starta sarcoin automatiskt vid inloggning.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start SARCoin on system login</source>
-        <translation>&amp;Starta SARCoin vid inloggning</translation>
+        <source>&amp;Start sarcoin on system login</source>
+        <translation>&amp;Starta sarcoin vid inloggning</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -1181,8 +1181,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the SARCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Öppna automatiskt SARCoin klientens port på routern. Detta fungerar endast om din router stödjer UPnP och det är aktiverat.</translation>
+        <source>Automatically open the sarcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Öppna automatiskt sarcoin klientens port på routern. Detta fungerar endast om din router stödjer UPnP och det är aktiverat.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1191,8 +1191,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the SARCoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation>Anslut till SARCoin nätverket via en SOCKS proxy (t.ex. när du ansluter genom Tor).</translation>
+        <source>Connect to the sarcoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <translation>Anslut till sarcoin nätverket via en SOCKS proxy (t.ex. när du ansluter genom Tor).</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1266,8 +1266,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting SARCoin.</source>
-        <translation>Användargränssnittets språk kan ställas in här. Inställningen börjar gälla efter omstart av SARCoin.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting sarcoin.</source>
+        <translation>Användargränssnittets språk kan ställas in här. Inställningen börjar gälla efter omstart av sarcoin.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -1281,8 +1281,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="+9"/>
-        <source>Whether to show SARCoin addresses in the transaction list or not.</source>
-        <translation>Om SARCoin adresser skall visas i transaktionslistan eller inte.</translation>
+        <source>Whether to show sarcoin addresses in the transaction list or not.</source>
+        <translation>Om sarcoin adresser skall visas i transaktionslistan eller inte.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1328,8 +1328,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting SARCoin.</source>
-        <translation>Inställningen börjar gälla efter omstart av SARCoin.</translation>
+        <source>This setting will take effect after restarting sarcoin.</source>
+        <translation>Inställningen börjar gälla efter omstart av sarcoin.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1347,8 +1347,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     <message>
         <location line="+33"/>
         <location line="+231"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the SARCoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Den visade informationen kan vara gammal. Din plånbok synkroniseras automatiskt med SARCoin nätverket efter att en anslutning skapats, men denna process är inte klar än.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the sarcoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>Den visade informationen kan vara gammal. Din plånbok synkroniseras automatiskt med sarcoin nätverket efter att en anslutning skapats, men denna process är inte klar än.</translation>
     </message>
     <message>
         <location line="-160"/>
@@ -1563,8 +1563,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the SARCoin-Qt help message to get a list with possible SARCoin command-line options.</source>
-        <translation>Visa SARCoin-Qt hjälp meddelandet för att få en lista över möjliga SARCoin kommandoradsalternativ.</translation>
+        <source>Show the sarcoin-Qt help message to get a list with possible sarcoin command-line options.</source>
+        <translation>Visa sarcoin-Qt hjälp meddelandet för att få en lista över möjliga sarcoin kommandoradsalternativ.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1583,13 +1583,13 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="-104"/>
-        <source>SARCoin - Debug window</source>
-        <translation>SARCoin - Felsökningsfönster</translation>
+        <source>sarcoin - Debug window</source>
+        <translation>sarcoin - Felsökningsfönster</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>SARCoin Core</source>
-        <translation>SARCoin Core</translation>
+        <source>sarcoin Core</source>
+        <translation>sarcoin Core</translation>
     </message>
     <message>
         <location line="+279"/>
@@ -1598,8 +1598,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the SARCoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Öppna SARCoin felsöknings-loggfilen från nuvarande data mapp. Detta kan kan ta ett par minuter för stora log filer.</translation>
+        <source>Open the sarcoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Öppna sarcoin felsöknings-loggfilen från nuvarande data mapp. Detta kan kan ta ett par minuter för stora log filer.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1608,8 +1608,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-33"/>
-        <source>Welcome to the SARCoin RPC console.</source>
-        <translation>Välkommen till SARCoin RPC konsoll.</translation>
+        <source>Welcome to the sarcoin RPC console.</source>
+        <translation>Välkommen till sarcoin RPC konsoll.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1767,8 +1767,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location filename="../sendcoinsdialog.cpp" line="-173"/>
-        <source>Enter a SARCoin address (e.g. SARCoinfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Fyll i en SARCoin adress (t.ex. SARCoinfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>Enter a sarcoin address (e.g. sarcoinfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Fyll i en sarcoin adress (t.ex. sarcoinfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1867,8 +1867,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="+251"/>
-        <source>WARNING: Invalid SARCoin address</source>
-        <translation>VARNING: Ogiltig SARCoin adress</translation>
+        <source>WARNING: Invalid sarcoin address</source>
+        <translation>VARNING: Ogiltig sarcoin adress</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1911,8 +1911,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>The address to send the payment to  (e.g. SARCoinfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Adressen att skicka betalningen till  (t.ex. SARCoinfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>The address to send the payment to  (e.g. sarcoinfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Adressen att skicka betalningen till  (t.ex. sarcoinfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1941,8 +1941,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a SARCoin address (e.g. SARCoinfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Fyll i en SARCoin adress (t.ex. SARCoinfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>Enter a sarcoin address (e.g. sarcoinfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Fyll i en sarcoin adress (t.ex. sarcoinfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
 </context>
 <context>
@@ -1965,8 +1965,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>The address to sign the message with (e.g. SARCoinfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Adressen att signera meddelandet med (t.ex. SARCoinfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>The address to sign the message with (e.g. sarcoinfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Adressen att signera meddelandet med (t.ex. sarcoinfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -2002,8 +2002,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this SARCoin address</source>
-        <translation>Signera meddelandet för att verifiera att du äger denna SARCoin adressen</translation>
+        <source>Sign the message to prove you own this sarcoin address</source>
+        <translation>Signera meddelandet för att verifiera att du äger denna sarcoin adressen</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2029,13 +2029,13 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>The address the message was signed with (e.g. SARCoinfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Adressen meddelandet var signerad med (t.ex. SARCoinfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>The address the message was signed with (e.g. sarcoinfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Adressen meddelandet var signerad med (t.ex. sarcoinfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified SARCoin address</source>
-        <translation>Verifiera meddelandet för att vara säker på att det var signerat med den angivna SARCoin adressen</translation>
+        <source>Verify the message to ensure it was signed with the specified sarcoin address</source>
+        <translation>Verifiera meddelandet för att vara säker på att det var signerat med den angivna sarcoin adressen</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2045,8 +2045,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a SARCoin address (e.g. SARCoinfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Fyll i en SARCoin adress (t.ex. SARCoinfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>Enter a sarcoin address (e.g. sarcoinfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Fyll i en sarcoin adress (t.ex. sarcoinfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -2055,8 +2055,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter SARCoin signature</source>
-        <translation>Fyll i SARCoin signatur</translation>
+        <source>Enter sarcoin signature</source>
+        <translation>Fyll i sarcoin signatur</translation>
     </message>
     <message>
         <location line="+82"/>
@@ -2626,8 +2626,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     <name>bitcoin-core</name>
     <message>
         <location filename="../bitcoinstrings.cpp" line="+33"/>
-        <source>SARCoin version</source>
-        <translation>SARCoin version</translation>
+        <source>sarcoin version</source>
+        <translation>sarcoin version</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2636,8 +2636,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Send command to -server or SARCoind</source>
-        <translation>Skicka kommando till -server eller SARCoind</translation>
+        <source>Send command to -server or sarcoind</source>
+        <translation>Skicka kommando till -server eller sarcoind</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2656,13 +2656,13 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Specify configuration file (default: SARCoin.conf)</source>
-        <translation>Ange konfigurationsfilen (standard: SARCoin.conf)</translation>
+        <source>Specify configuration file (default: sarcoin.conf)</source>
+        <translation>Ange konfigurationsfilen (standard: sarcoin.conf)</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Specify pid file (default: SARCoind.pid)</source>
-        <translation>Ange pid filen (standard SARCoind.pid)</translation>
+        <source>Specify pid file (default: sarcoind.pid)</source>
+        <translation>Ange pid filen (standard sarcoind.pid)</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2811,8 +2811,8 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
     </message>
     <message>
         <location line="+61"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong SARCoin will not work properly.</source>
-        <translation>Varning: Kolla att din dators tid och datum är rätt. SARCoin kan inte fungera ordentligt om tiden i datorn är fel.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong sarcoin will not work properly.</source>
+        <translation>Varning: Kolla att din dators tid och datum är rätt. sarcoin kan inte fungera ordentligt om tiden i datorn är fel.</translation>
     </message>
     <message>
         <location line="-31"/>
@@ -3001,24 +3001,24 @@ Detta betyder att en avgift på minst %2 krävs.</translation>
         <source>%s, you must set a rpcpassword in the configuration file:
  %s
 It is recommended you use the following random password:
-rpcuser=SARCoinrpc
+rpcuser=sarcoinrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;SARCoin Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;sarcoin Alert&quot; admin@foo.com
 </source>
         <translation>%s, du måste sätta rpcpassword i konfigurationsfilen:
  %s
 Det är rekommenderat att du använder följande slumpmässiga lösenord:
-rpcuser=SARCoinrpc
+rpcuser=sarcoinrpc
 rpcpassword=%s
 (du behöver inte komma ihåg detta lösenord)
 Användarnamnet och lösenordet FÅR INTE vara samma.
 Om filen inte finns, skapa den med endast ägarrättigheter.
 Det är också rekommenderat att sätta alertnotify så du blir notifierad om problem;
-till exempel: alertnotify=echo %%s | mail -s &quot;SARCoin Varning&quot; admin@foo.com
+till exempel: alertnotify=echo %%s | mail -s &quot;sarcoin Varning&quot; admin@foo.com
 </translation>
     </message>
     <message>
@@ -3143,13 +3143,13 @@ till exempel: alertnotify=echo %%s | mail -s &quot;SARCoin Varning&quot; admin@f
     </message>
     <message>
         <location line="+1"/>
-        <source>Cannot obtain a lock on data directory %s.  SARCoin is probably already running.</source>
-        <translation>Kan inte låsa datan i mappen %s. SARCoin är kanske redan startad.</translation>
+        <source>Cannot obtain a lock on data directory %s.  sarcoin is probably already running.</source>
+        <translation>Kan inte låsa datan i mappen %s. sarcoin är kanske redan startad.</translation>
     </message>
     <message>
         <location line="-98"/>
-        <source>SARCoin</source>
-        <translation>SARCoin</translation>
+        <source>sarcoin</source>
+        <translation>sarcoin</translation>
     </message>
     <message>
         <location line="+140"/>
@@ -3183,13 +3183,13 @@ till exempel: alertnotify=echo %%s | mail -s &quot;SARCoin Varning&quot; admin@f
     </message>
     <message>
         <location line="+4"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of SARCoin</source>
-        <translation>Kunde inte ladda wallet.dat: En nyare version av SARCoin krävs</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of sarcoin</source>
+        <translation>Kunde inte ladda wallet.dat: En nyare version av sarcoin krävs</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet needed to be rewritten: restart SARCoin to complete</source>
-        <translation>Plånboken måste skrivas om: Starta om SARCoin för att slutföra</translation>
+        <source>Wallet needed to be rewritten: restart sarcoin to complete</source>
+        <translation>Plånboken måste skrivas om: Starta om sarcoin för att slutföra</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3258,8 +3258,8 @@ till exempel: alertnotify=echo %%s | mail -s &quot;SARCoin Varning&quot; admin@f
     </message>
     <message>
         <location line="+122"/>
-        <source>Unable to bind to %s on this computer. SARCoin is probably already running.</source>
-        <translation>Kan inte binda till %s på denna dator. SARCoin är sannolikt redan startad.</translation>
+        <source>Unable to bind to %s on this computer. sarcoin is probably already running.</source>
+        <translation>Kan inte binda till %s på denna dator. sarcoin är sannolikt redan startad.</translation>
     </message>
     <message>
         <location line="-97"/>

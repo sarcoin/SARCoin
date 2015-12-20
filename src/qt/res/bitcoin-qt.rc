@@ -1,4 +1,4 @@
-IDI_ICON1 ICON DISCARDABLE "icons/bitcoin.ico"
+IDI_ICON1 ICON DISCARDABLE "icons/sarcoin.ico"
 
 #include <windows.h>             // needed for VERSIONINFO
 #include "../../clientversion.h" // holds the needed client version information
@@ -19,13 +19,13 @@ BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
             VALUE "CompanyName",        "SARCoin"
-            VALUE "FileDescription",    "SARCoin-Qt (OSS GUI client for SARCoin)"
+            VALUE "FileDescription",    "sarcoin-Qt (OSS GUI client for SARCoin)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "SARCoin-qt"
-            VALUE "LegalCopyright",     "2009-2012 The Bitcoin developers, 2012-2013 The SARCoin & PPCoin developers"
+            VALUE "InternalName",       "sarcoin-qt"
+            VALUE "LegalCopyright",     "2009-2014 The Bitcoin developers, 2012-2014 The PPCoin developers, 2014 The SARCoin developers"
             VALUE "LegalTrademarks1",   "Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "SARCoin-qt.exe"
-            VALUE "ProductName",        "SARCoin-Qt"
+            VALUE "OriginalFilename",   "sarcoin-qt.exe"
+            VALUE "ProductName",        "sarcoin-Qt"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END

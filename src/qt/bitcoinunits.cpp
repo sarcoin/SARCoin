@@ -45,9 +45,9 @@ QString BitcoinUnits::description(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("SARCoins");
-    case mBTC: return QString("Milli-SARCoins (1 / 1,000)");
-    case uBTC: return QString("Micro-SARCoins (1 / 1,000,000)");
+    case BTC: return QString("sarcoin");
+    case mBTC: return QString("Milli-sarcoin (1 / 1,000)");
+    case uBTC: return QString("Micro-sarcoin (1 / 1,000,000)");
     default: return QString("???");
     }
 }

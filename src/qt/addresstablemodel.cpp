@@ -281,7 +281,7 @@ QVariant AddressTableModel::headerData(int section, Qt::Orientation orientation,
     return QVariant();
 }
 
-Qt::ItemFlags AddressTableModel::flags(const QModelIndex &index) const
+Qt::ItemFlags AddressTableModel::Flags(const QModelIndex &index) const
 {
     if(!index.isValid())
         return 0;

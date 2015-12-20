@@ -176,6 +176,7 @@ void TransactionView::setModel(WalletModel *model)
         transactionView->sortByColumn(TransactionTableModel::Date, Qt::DescendingOrder);
         transactionView->verticalHeader()->hide();
 
+#if QT_VERSION < 0x050000
         transactionView->horizontalHeader()->resizeSection(
                 TransactionTableModel::Status, 23);
         transactionView->horizontalHeader()->resizeSection(
@@ -186,6 +187,13 @@ void TransactionView::setModel(WalletModel *model)
                 TransactionTableModel::ToAddress, QHeaderView::Stretch);
         transactionView->horizontalHeader()->resizeSection(
                 TransactionTableModel::Amount, 100);
+#else
+        transactionView->horizontalHeader()->setSectionResizeMode(TransactionTableModel::Status, QHeaderView::ResizeToContents);
+                transactionView->horizontalHeader()->setSectionResizeMode(TransactionTableModel::Date, QHeaderView::ResizeToContents);
+                transactionView->horizontalHeader()->setSectionResizeMode(TransactionTableModel::Type, QHeaderView::ResizeToContents);
+                transactionView->horizontalHeader()->setSectionResizeMode(TransactionTableModel::ToAddress, QHeaderView::Stretch);
+                transactionView->horizontalHeader()->setSectionResizeMode(TransactionTableModel::Amount, QHeaderView::ResizeToContents);
+#endif
     }
 }
 

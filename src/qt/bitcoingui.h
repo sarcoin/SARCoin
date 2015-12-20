@@ -4,13 +4,14 @@
 #include <QMainWindow>
 #include <QSystemTrayIcon>
 
-#include <QScopedPointer>
-
 class TransactionTableModel;
 class ClientModel;
 class WalletModel;
 class TransactionView;
 class OverviewPage;
+class StatisticsPage;
+//class TradePage;
+class BlockBrowser;
 class AddressBookPage;
 class SendCoinsDialog;
 class SignVerifyMessageDialog;
@@ -62,11 +63,14 @@ private:
     QStackedWidget *centralWidget;
 
     OverviewPage *overviewPage;
+    StatisticsPage *statisticsPage;
+//	TradePage *tradePage;
+	BlockBrowser *blockBrowser;
     QWidget *transactionsPage;
     AddressBookPage *addressBookPage;
     AddressBookPage *receiveCoinsPage;
     SendCoinsDialog *sendCoinsPage;
-    QScopedPointer<SignVerifyMessageDialog> signVerifyMessageDialog;
+    SignVerifyMessageDialog *signVerifyMessageDialog;
 
     QLabel *labelEncryptionIcon;
     QLabel *labelStakingIcon;
@@ -77,6 +81,9 @@ private:
 
     QMenuBar *appMenuBar;
     QAction *overviewAction;
+    QAction *statisticsAction;
+//	QAction *tradeAction;
+	QAction *blockAction;
     QAction *historyAction;
     QAction *quitAction;
     QAction *sendCoinsAction;
@@ -99,7 +106,7 @@ private:
     QSystemTrayIcon *trayIcon;
     Notificator *notificator;
     TransactionView *transactionView;
-    QScopedPointer<RPCConsole> rpcConsole;
+    RPCConsole *rpcConsole;
 
     QMovie *syncIconMovie;
 
@@ -139,6 +146,12 @@ public slots:
 private slots:
     /** Switch to overview (home) page */
     void gotoOverviewPage();
+    /** Switch to statistics page*/
+    void gotoStatisticsPage();
+//	/** Switch to trade page*/
+//    void gotoTradePage();
+	/** Switch to block explorer*/
+    void gotoBlockBrowser();
     /** Switch to history (transactions) page */
     void gotoHistoryPage();
     /** Switch to address book page */
@@ -155,6 +168,7 @@ private slots:
 
     /** Show configuration dialog */
     void optionsClicked();
+ 
     /** Show about dialog */
     void aboutClicked();
 #ifndef Q_OS_MAC

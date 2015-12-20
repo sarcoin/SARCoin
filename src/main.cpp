@@ -11,7 +11,6 @@
 #include "init.h"
 #include "ui_interface.h"
 #include "kernel.h"
-#include "zerocoin/Zerocoin.h"
 #include <boost/algorithm/string/replace.hpp>
 #include <boost/filesystem.hpp>
 #include <boost/filesystem/fstream.hpp>
@@ -34,7 +33,6 @@ unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
 set<pair<COutPoint, unsigned int> > setStakeSeen;
-libzerocoin::Params* ZCParams;
 
 CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // "standard" scrypt target limit for proof of work, results with 0,000244140625 proof-of-work difficulty
 CBigNum bnProofOfStakeLimit(~uint256(0) >> 20);
@@ -74,6 +72,8 @@ const string strMessageMagic = "SARCoin Signed Message:\n";
 int64_t nTransactionFee = MIN_TX_FEE;
 int64_t nReserveBalance = 0;
 int64_t nMinimumInputValue = 0;
+
+int64_t NEW_INTERVAL_SWITCH_TIME = 1451123600;
 
 extern enum Checkpoints::CPMode CheckpointsMode;
 
@@ -466,6 +466,9 @@ bool CTransaction::CheckTransaction() const
         return DoS(10, error("CTransaction::CheckTransaction() : vin empty"));
     if (vout.empty())
         return DoS(10, error("CTransaction::CheckTransaction() : vout empty"));
+    // flying Delorean: https://github.com/ppcoin/ppcoin/pull/104
+    if (nTime > FutureDrift(GetAdjustedTime()))
+        return DoS(10, error("CTransaction::CheckTransaction() : timestamp is too far into the future"));
     // Size limits
     if (::GetSerializeSize(*this, SER_NETWORK, PROTOCOL_VERSION) > MAX_BLOCK_SIZE)
         return DoS(100, error("CTransaction::CheckTransaction() : size limits failed"));
@@ -1002,6 +1005,7 @@ int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees, int nHeight)
 }
 
 static const int64_t nTargetTimespan = 5 * 15 * 60;
+static const int64_t nTargetTimespan_new = 10 * 60;
 //
 // maximum nBits value could possible be required nTime after
 //
@@ -1079,7 +1083,15 @@ static unsigned int GetNextTargetRequired_(const CBlockIndex* pindexLast, bool f
     // ppcoin: retarget with exponential moving toward target spacing
     CBigNum bnNew;
     bnNew.SetCompact(pindexPrev->nBits);
-    int64_t nInterval = nTargetTimespan / _nTargetSpacing;
+    int64_t nInterval;
+    if (pindexPrev->nTime < NEW_INTERVAL_SWITCH_TIME)
+    {
+        nInterval = nTargetTimespan / _nTargetSpacing;
+    }
+    else
+    {
+        nInterval = nTargetTimespan_new / _nTargetSpacing;
+    }
     bnNew *= ((nInterval - 1) * _nTargetSpacing + nActualSpacing + nActualSpacing);
     bnNew /= ((nInterval + 1) * _nTargetSpacing);
 
@@ -2483,10 +2495,6 @@ bool LoadBlockIndex(bool fAllowNew)
         nStakeMinAge = 20 * 60; // test net min age is 20 min
         nCoinbaseMaturity = 10; // test maturity is 10 blocks
     }
-#if 0
-    // Set up the Zerocoin Params object
-    ZCParams = new libzerocoin::Params(bnTrustedModulus);
-#endif
 
     //
     // Load block index

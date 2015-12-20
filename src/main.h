@@ -10,7 +10,6 @@
 #include "net.h"
 #include "script.h"
 #include "scrypt.h"
-#include "zerocoin/Zerocoin.h"
 #include "hashblock.h"
 
 #include <list>
@@ -50,13 +49,35 @@ static const int fHaveUPnP = true;
 static const int fHaveUPnP = false;
 #endif
 
+// Switch times and blocks
+extern int64_t NEW_INTERVAL_SWITCH_TIME;
+
 static const uint256 hashGenesisBlock("0x00000c0941571db78f7fc75aa728eb48cfb20ecbdb216bd9c0c73914572e5f6a");
 static const uint256 hashGenesisBlockTestNet("0x00000e4e0549912423730a89e05b8f096591d32795b1612a0abd5c3541904ddf");
-inline int64_t PastDrift(int64_t nTime)   { return nTime - 15 * 60; } // up to 15 minutes from the past
-inline int64_t FutureDrift(int64_t nTime) { return nTime + 15 * 60; } // up to 15 minutes from the future
+inline int64_t PastDrift(int64_t nTime)
+{
+  if (nTime < NEW_INTERVAL_SWITCH_TIME)
+  {
+      return nTime - 15 * 60;  // up to 15 minutes from the past
+  }
+  else
+  {
+      return nTime;  // can't come in before best block
+  }
+}
+inline int64_t FutureDrift(int64_t nTime)
+{
+  if (nTime < NEW_INTERVAL_SWITCH_TIME)
+  {
+      return nTime + 15 * 60; // up to 15 minutes from the future
+  }
+  else
+  {
+      return nTime + 15; // 15 seconds max drift in the future
+  }
+}
 
 
-extern libzerocoin::Params* ZCParams;
 extern CScript COINBASE_FLAGS;
 extern CCriticalSection cs_main;
 extern std::map<uint256, CBlockIndex*> mapBlockIndex;

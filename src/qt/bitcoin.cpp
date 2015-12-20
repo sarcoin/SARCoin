@@ -83,7 +83,7 @@ static void InitMessage(const std::string &message)
 {
     if(splashref)
     {
-        splashref->showMessage(QString::fromStdString(message), Qt::AlignBottom|Qt::AlignHCenter, QColor(232,186,63));
+        splashref->showMessage(QString::fromStdString(message), Qt::AlignBottom|Qt::AlignHCenter, QColor(255,223,120));
         QApplication::instance()->processEvents();
     }
 }
@@ -106,7 +106,7 @@ static std::string Translate(const char* psz)
 static void handleRunawayException(std::exception *e)
 {
     PrintExceptionContinue(e, "Runaway exception");
-    QMessageBox::critical(0, "Runaway exception", BitcoinGUI::tr("A fatal error occurred. SARCoin can no longer continue safely and will quit.") + QString("\n\n") + QString::fromStdString(strMiscWarning));
+    QMessageBox::critical(0, "Runaway exception", BitcoinGUI::tr("A fatal error occurred. sarcoin can no longer continue safely and will quit.") + QString("\n\n") + QString::fromStdString(strMiscWarning));
     exit(1);
 }
 
@@ -136,7 +136,7 @@ int main(int argc, char *argv[])
     {
         // This message can not be translated, as translation is not initialized yet
         // (which not yet possible because lang=XX can be overridden in bitcoin.conf in the data directory)
-        QMessageBox::critical(0, "SARCoin",
+        QMessageBox::critical(0, "sarcoin",
                               QString("Error: Specified data directory \"%1\" does not exist.").arg(QString::fromStdString(mapArgs["-datadir"])));
         return 1;
     }
@@ -144,12 +144,12 @@ int main(int argc, char *argv[])
 
     // Application identification (must be set before OptionsModel is initialized,
     // as it is used to locate QSettings)
-    app.setOrganizationName("SARCoin");
+    app.setOrganizationName("sarcoin");
     //XXX app.setOrganizationDomain("");
     if(GetBoolArg("-testnet")) // Separate UI settings for testnet
-        app.setApplicationName("SARCoin-Qt-testnet");
+        app.setApplicationName("sarcoin-Qt-testnet");
     else
-        app.setApplicationName("SARCoin-Qt");
+        app.setApplicationName("sarcoin-Qt");
 
     // ... then GUI settings:
     OptionsModel optionsModel;
@@ -197,22 +197,12 @@ int main(int argc, char *argv[])
         help.showOrPrint();
         return 1;
     }
-    
-    QSplashScreen *splash = new QSplashScreen;
-    splash->setPixmap(QPixmap(":/images/splash"));
-    //QSplashScreen splash(QPixmap(":/images/splash"), 0);
-    
 
-    //if (GetBoolArg("-testnet", true))
-    if (GetBoolArg("-testnet") || GetBoolArg("-testnet=1"))
-      splash->setPixmap(QPixmap(":/images/splash-testnet"));
-    //else
-    //  splash->setPixmap(QPixmap(":/images/splash"));
-    
+    QSplashScreen splash(QPixmap(":/images/splash"), 0);
     if (GetBoolArg("-splash", true) && !GetBoolArg("-min"))
     {
-        splash->show();
-            splashref = splash;
+        splash.show();
+        splashref = &splash;
     }
 
     app.processEvents();
@@ -236,7 +226,7 @@ int main(int argc, char *argv[])
                 optionsModel.Upgrade(); // Must be done after AppInit2
 
                 if (splashref)
-                    splash->finish(&window);
+                    splash.finish(&window);
 
                 ClientModel clientModel(&optionsModel);
                 WalletModel walletModel(pwalletMain, &optionsModel);
