@@ -46,6 +46,8 @@ TransactionView::TransactionView(QWidget *parent) :
     hlayout->addSpacing(23);
 #endif
 
+    // setStyleSheet("QTableView {background-color: transparent}");
+
     dateWidget = new QComboBox(this);
 #ifdef Q_OS_MAC
     dateWidget->setFixedWidth(121);
