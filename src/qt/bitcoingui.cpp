@@ -19,8 +19,6 @@
 #include "addresstablemodel.h"
 #include "transactionview.h"
 #include "overviewpage.h"
-#include "statisticspage.h"
-#include "blockbrowser.h"
 //#include "tradepage.h"
 #include "bitcoinunits.h"
 #include "guiconstants.h"
@@ -109,9 +107,6 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
 
     // Create tabs
     overviewPage = new OverviewPage();
-    statisticsPage = new StatisticsPage(this);
-//    tradePage = new TradePage(this);
-	blockBrowser = new BlockBrowser(this);
 
     transactionsPage = new QWidget(this);
     QVBoxLayout *vbox = new QVBoxLayout();
@@ -129,9 +124,7 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
 
     centralWidget = new QStackedWidget(this);
     centralWidget->addWidget(overviewPage);
-    centralWidget->addWidget(statisticsPage);
 //    centralWidget->addWidget(tradePage);
-	centralWidget->addWidget(blockBrowser);
 	centralWidget->addWidget(transactionsPage);
     centralWidget->addWidget(addressBookPage);
     centralWidget->addWidget(receiveCoinsPage);
@@ -146,7 +139,6 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
     labelStakingIcon = new QLabel();
     labelConnectionsIcon = new QLabel();
     labelBlocksIcon = new QLabel();
-    //actionConvertIcon = new QAction(QIcon(":/icons/statistics"), tr(""), this);
 
     if (GetBoolArg("-staking", true))
     {
@@ -225,12 +217,6 @@ void BitcoinGUI::createActions()
     overviewAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_1));
     tabGroup->addAction(overviewAction);
 
-    // statisticsAction = new QAction(QIcon(":/icons/statistics"), tr("&Statistics"), this);
-    statisticsAction = new QAction(QIcon(":/icons/statistics"), tr(""), this);
-    statisticsAction->setToolTip(tr("View statistics"));
-    statisticsAction->setCheckable(true);
-    tabGroup->addAction(statisticsAction);
-
     // sendCoinsAction = new QAction(QIcon(":/icons/send"), tr("&Send coins"), this);
     sendCoinsAction = new QAction(QIcon(":/icons/send"), tr(""), this);
     sendCoinsAction->setToolTip(tr("Send coins to a SARCoin address"));
@@ -265,18 +251,8 @@ void BitcoinGUI::createActions()
 //    tradeAction->setCheckable(true);
 //    tabGroup->addAction(tradeAction);
 	
-    blockAction = new QAction(QIcon(":/icons/block"), tr("&Block Explorer"), this);
-    blockAction = new QAction(QIcon(":/icons/block"), tr(""), this);
-    blockAction->setToolTip(tr("Explore the BlockChain"));
-    blockAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_6));
-    blockAction->setCheckable(true);
-    tabGroup->addAction(blockAction);
-	
-    connect(blockAction, SIGNAL(triggered()), this, SLOT(gotoBlockBrowser()));
     connect(overviewAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(overviewAction, SIGNAL(triggered()), this, SLOT(gotoOverviewPage()));
-    connect(statisticsAction, SIGNAL(triggered()), this, SLOT(gotoStatisticsPage()));
-//    connect(tradeAction, SIGNAL(triggered()), this, SLOT(gotoTradePage()));
     connect(sendCoinsAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(sendCoinsAction, SIGNAL(triggered()), this, SLOT(gotoSendCoinsPage()));
     connect(receiveCoinsAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
@@ -382,8 +358,6 @@ void BitcoinGUI::createToolBars()
     toolbar->addAction(historyAction);
     toolbar->addAction(addressBookAction);
 //	toolbar->addAction(tradeAction);
-	toolbar->addAction(statisticsAction);
-	toolbar->addAction(blockAction);
     QWidget* spacer = new QWidget();
     spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     toolbar->addWidget(spacer);
@@ -452,9 +426,7 @@ void BitcoinGUI::setWalletModel(WalletModel *walletModel)
         sendCoinsPage->setModel(walletModel);
         signVerifyMessageDialog->setModel(walletModel);
 
-        statisticsPage->setModel(clientModel);
 //        tradePage->setModel(clientModel);
-		blockBrowser->setModel(clientModel);
         setEncryptionStatus(walletModel->getEncryptionStatus());
         connect(walletModel, SIGNAL(encryptionStatusChanged(int)), this, SLOT(setEncryptionStatus(int)));
 
@@ -765,24 +737,6 @@ void BitcoinGUI::gotoOverviewPage()
 //    exportAction->setEnabled(false);
 //    disconnect(exportAction, SIGNAL(triggered()), 0, 0);
 //}
-
-void BitcoinGUI::gotoBlockBrowser()
-{
-    blockAction->setChecked(true);
-    centralWidget->setCurrentWidget(blockBrowser);
-
-    exportAction->setEnabled(false);
-    disconnect(exportAction, SIGNAL(triggered()), 0, 0);
-}
-
-void BitcoinGUI::gotoStatisticsPage()
-{
-    statisticsAction->setChecked(true);
-    centralWidget->setCurrentWidget(statisticsPage);
-
-    exportAction->setEnabled(false);
-    disconnect(exportAction, SIGNAL(triggered()), 0, 0);
-}
 
 void BitcoinGUI::gotoHistoryPage()
 {
