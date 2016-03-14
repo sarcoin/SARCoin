@@ -4,16 +4,16 @@ VERSION = 1.0.0
 INCLUDEPATH += src src/json src/qt
 DEFINES += QT_GUI BOOST_THREAD_USE_LIB BOOST_SPIRIT_THREADSAFE HAVE_CXX_STDHEADERS MINIUPNP_STATICLIB
 DEFINES += ENABLE_WALLET
-QT += network
 CONFIG += no_include_pwd
 CONFIG += thread
 CONFIG += static
+QT += network webkit
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 lessThan(QT_MAJOR_VERSION, 5): CONFIG += static
 QMAKE_CXXFLAGS = -fpermissive
 
 greaterThan(QT_MAJOR_VERSION, 4) {
-    QT += widgets
+    QT += widgets network
     DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0
 }
 
