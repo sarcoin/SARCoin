@@ -6,21 +6,14 @@ DEFINES += QT_GUI BOOST_THREAD_USE_LIB BOOST_SPIRIT_THREADSAFE HAVE_CXX_STDHEADE
 DEFINES += ENABLE_WALLET
 CONFIG += no_include_pwd
 CONFIG += thread
-CONFIG += static
 QT += network
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-lessThan(QT_MAJOR_VERSION, 5): CONFIG += static
 QMAKE_CXXFLAGS = -fpermissive
 
 greaterThan(QT_MAJOR_VERSION, 4) {
     QT += widgets network
     DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0
 }
-
-win32 {
-
-}
-
 
 # for boost 1.37, add -mt to the boost libraries
 # use: qmake BOOST_LIB_SUFFIX=-mt
@@ -55,9 +48,8 @@ QMAKE_LFLAGS *= -fstack-protector-all --param ssp-buffer-size=1
 # This can be enabled for Windows, when we switch to MinGW >= 4.4.x.
 }
 # for extra security on Windows: enable ASLR and DEP via GCC linker flags
-win32:QMAKE_LFLAGS *= -Wl,--large-address-aware -static
+win32:QMAKE_LFLAGS *= -Wl,--dynamicbase -Wl,--nxcompat
 win32:QMAKE_LFLAGS += -static-libgcc -static-libstdc++
-lessThan(QT_MAJOR_VERSION, 5): win32: QMAKE_LFLAGS *= -static
 
 # use: qmake "USE_QRCODE=1"
 # libqrencode (http://fukuchi.org/works/qrencode/index.en.html) must be installed for support
@@ -390,11 +382,12 @@ OTHER_FILES += \
 # platform specific defaults, if not overridden on command line
 isEmpty(BOOST_LIB_SUFFIX) {
     macx:BOOST_LIB_SUFFIX = -mt
-    windows:BOOST_LIB_SUFFIX = -mgw49-mt-s-1_57
+    windows:BOOST_LIB_SUFFIX = -mt
 }
 
 isEmpty(BOOST_THREAD_LIB_SUFFIX) {
-    BOOST_THREAD_LIB_SUFFIX = $$BOOST_LIB_SUFFIX
+    win32:BOOST_THREAD_LIB_SUFFIX = _win32$$BOOST_LIB_SUFFIX
+    else:BOOST_THREAD_LIB_SUFFIX = $$BOOST_LIB_SUFFIX
 }
 
 isEmpty(BDB_LIB_PATH) {
@@ -460,6 +453,11 @@ contains(RELEASE, 1) {
         # Linux: turn dynamic linking back on for c/c++ runtime libraries
         LIBS += -Wl,-Bdynamic
     }
+}
+
+!windows:!macx {
+    DEFINES += LINUX
+    LIBS += -lrt -ldl
 }
 
 system($$QMAKE_LRELEASE -silent $$_PRO_FILE_)
