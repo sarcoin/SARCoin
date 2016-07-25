@@ -39,7 +39,7 @@ CBigNum bnProofOfStakeLimit(~uint256(0) >> 20);
 CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 16);
 
 unsigned int nTargetSpacing = 1.5 * 60;
-unsigned int nStakeMinAge = 60 * 60 * 8; // 8 hours       
+unsigned int nStakeMinAge = 60 * 60 * 8; // 8 hours
 unsigned int nModifierInterval = 20 * 60; // time to elapse before new modifier is computed
 
 int nCoinbaseMaturity = 40;
@@ -983,20 +983,39 @@ const int DAILY_BLOCKCOUNT =  1440 / 5;
 // miner's coin stake reward based on coin age spent (coin-days)
 int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees, int nHeight)
 {
-    int64_t nRewardCoinYear;
-
-    nRewardCoinYear = COIN_YEAR_REWARD;
-
-	// Double reward for about the first year
-	if (nHeight > 3200 && nHeight < 345000)
-		nRewardCoinYear = 2 * CENT;
-
+    int64_t nRewardCoinYear = COIN_YEAR_REWARD;
     int64_t nSubsidy = nCoinAge * (nRewardCoinYear / COIN) / 365;
+    int64_t nSubsidyLimit = MAX_STAKE_BLOCK_REWARD * COIN;
 
+  	// 2% reward for first stake period
+  	if (nHeight > 3200 && nHeight < 190000) {
+  		nRewardCoinYear = 2 * CENT;
+    }
 
-	// Fix for rounding error
-	if (nHeight > 600)
-		nSubsidy = nCoinAge * nRewardCoinYear / 365 / COIN;
+    // 5% for second stake period (~1year)
+    if (nHeight >= 190000 && nHeight < 540400) {
+  		nRewardCoinYear = 5 * CENT;
+      nSubsidyLimit = 2.5 * COIN;
+    }
+
+    // 4% for third stake period (~1year)
+    if (nHeight >= 540400 && nHeight < 890800) {
+  		nRewardCoinYear = 4 * CENT;
+      nSubsidyLimit = 2 * COIN;
+    }
+
+    // 3% for fourth stake period (forever)
+    if (nHeight >= 890800) {
+  		nRewardCoinYear = 3 * CENT;
+    }
+
+  	// Fix for rounding error
+  	if (nHeight > 600)
+  		nSubsidy = nCoinAge * nRewardCoinYear / 365 / COIN;
+
+    // enforce nSubsidyLimit after first reward change
+    if (nHeight >= 190000)
+      nSubsidy = min(nSubsidy, nSubsidyLimit);
 
     if (fDebug && GetBoolArg("-printcreation"))
         printf("GetProofOfStakeReward(): create=%s nCoinAge=%"PRId64"\n", FormatMoney(nSubsidy).c_str(), nCoinAge);
