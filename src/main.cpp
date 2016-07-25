@@ -39,8 +39,7 @@ CBigNum bnProofOfStakeLimit(~uint256(0) >> 20);
 CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 16);
 
 unsigned int nTargetSpacing = 1.5 * 60;
-unsigned int nStakeMinAge = 60 * 60 * 8; // 8 hours
-unsigned int nStakeMaxAge = 60 * 60 * 24 * 5; // 5 days         
+unsigned int nStakeMinAge = 60 * 60 * 8; // 8 hours       
 unsigned int nModifierInterval = 20 * 60; // time to elapse before new modifier is computed
 
 int nCoinbaseMaturity = 40;
@@ -970,13 +969,13 @@ uint256 WantedByOrphan(const CBlock* pblockOrphan)
 int64_t GetProofOfWorkReward(int64_t nFees, int nHeight)
 {
     int64_t nSubsidy = 0 * COIN;
-	
+
 	if (nHeight == 1)
 		return 250001000 * COIN;
-    
+
     if (fDebug && GetBoolArg("-printcreation"))
         printf("GetProofOfWorkReward() : create=%s nSubsidy=%"PRId64" nHeight=%u\n", FormatMoney(nSubsidy).c_str(), nSubsidy, nHeight);
-	
+
     return nSubsidy + nFees;
 }
 
@@ -987,13 +986,14 @@ int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees, int nHeight)
     int64_t nRewardCoinYear;
 
     nRewardCoinYear = COIN_YEAR_REWARD;
-	
+
 	// Double reward for about the first year
 	if (nHeight > 3200 && nHeight < 345000)
 		nRewardCoinYear = 2 * CENT;
 
     int64_t nSubsidy = nCoinAge * (nRewardCoinYear / COIN) / 365;
-	
+
+
 	// Fix for rounding error
 	if (nHeight > 600)
 		nSubsidy = nCoinAge * nRewardCoinYear / 365 / COIN;
@@ -1057,11 +1057,11 @@ static unsigned int GetNextTargetRequired_(const CBlockIndex* pindexLast, bool f
     CBigNum bnTargetLimit = fProofOfStake ? bnProofOfStakeLimit : bnProofOfWorkLimit;
 
 	unsigned int _nTargetSpacing = nTargetSpacing;
-	
+
 	// Prior to block 3100, use old blocktime of 5 mins
 	if (pindexLast->nHeight + 1 < 3200)
 		_nTargetSpacing = 5 * 60;
-	
+
     if (pindexLast == NULL)
         return bnTargetLimit.GetCompact(); // genesis block
 
@@ -1073,7 +1073,7 @@ static unsigned int GetNextTargetRequired_(const CBlockIndex* pindexLast, bool f
         return bnTargetLimit.GetCompact(); // second block
 
     int64_t nActualSpacing = pindexPrev->GetBlockTime() - pindexPrevPrev->GetBlockTime();
-	
+
     if (nActualSpacing < 1)
         nActualSpacing = 1;
 	if (nActualSpacing > _nTargetSpacing * 6)
@@ -1892,7 +1892,7 @@ bool CBlock::SetBestChain(CTxDB& txdb, CBlockIndex* pindexNew)
 // ppcoin: total coin age spent in transaction, in the unit of coin-days.
 // Only those coins meeting minimum age requirement counts. As those
 // transactions not in main chain are not currently indexed so we
-// might not find out about their coin age. Older transactions are 
+// might not find out about their coin age. Older transactions are
 // guaranteed to be in main chain by sync-checkpoint. This rule is
 // introduced to help nodes establish a consistent view of the coin
 // age (trust score) of competing branches.
@@ -2538,7 +2538,7 @@ bool LoadBlockIndex(bool fAllowNew)
             block.nTime    = 0;
             block.nNonce   = 0;
         }
-        
+
         block.print();
         printf("block.GetHash() == %s\n", block.GetHash().ToString().c_str());
         printf("block.hashMerkleRoot == %s\n", block.hashMerkleRoot.ToString().c_str());
@@ -3120,7 +3120,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
                     if (inv.hash == pfrom->hashContinue)
                     {
                         // ppcoin: send latest proof-of-work block to allow the
-                        // download node to accept as orphan (proof-of-stake 
+                        // download node to accept as orphan (proof-of-stake
                         // block might be rejected by stake connection check)
                         vector<CInv> vInv;
                         vInv.push_back(CInv(MSG_BLOCK, GetLastBlockIndex(pindexBest, false)->GetBlockHash()));
