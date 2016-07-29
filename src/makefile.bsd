@@ -4,7 +4,7 @@ $ Copyright (c) 2016 . Dr. Baloch Asif PhD . KryptoCommerce International S.L Se
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 # Tested on FreeBSD 10.2 Stable / Production Release July 28 - 2016
-# FreeBSD 10 doesn't come with pre packaged build tools. The best way to get all the dependencies is by building bitcoin-daemon itself or go step
+# FreeBSD 10 doesn't come with pre packaged build tools requierd to build this. The best way to get all the dependencies is by building bitcoin-daemon itself or go step
 # by step and manually install the requirements first. 
 #
 # Start off by doing 
