@@ -1,8 +1,36 @@
 # Copyright (c) 2009-2010 Satoshi Nakamoto
+$ Copyright (c) 2016 . Dr. Baloch Asif PhD . KryptoCommerce International S.L Seville, Spain
 # Distributed under the MIT/X11 software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
+# Tested on FreeBSD 10.2 Stable / Production Release July 28 - 2016
+# FreeBSD 10 doesn't come with pre packaged build tools. The best way to get all the dependencies is by building bitcoin-daemon itself or go step
+# by step and manually install the requirements first. 
+#
+# Start off by doing 
+# freebsd-update fetch install
+# portsnap update fetch
+# portsnap extract ( This will take a while so be patient ) 
+# pkg install gmake openssl , etc which are the main requirements for the build environment.
+# Simpler way to add incemental dependencies is to use portmaster
+# cd /usr/ports/ports-mgmt/portmaster && make install clean
+# portmaster shells/bash
+# portmaster devel/protobuf devel/pkgconf security/openssl devel/gmake devel/automake devel/autoconf
+# portmaster security/openssl
+# portmaster devel/boost-libs databases/db48
+#
+# set compilers and flags
+# export CC=clang
+# export CXX=c++
+# export CXXFLAGS="-I/usr/local/include -I/usr/local/include/db48"
+# export LDFLAGS="-L/usr/local/lib -L/usr/local/lib/db48"
+#
+# This should be enough 
+# ToDo: OpenBSD Latest testing installation.
+
 USE_UPNP:=0
+# Change to 1 if you like but you must have miniupnp dependencies installed. There is no need for it though.
+# To install, just do pkg add miniupnpd 
 USE_IPV6:=1
 
 LINK:=$(CXX)
