@@ -49,3 +49,9 @@ Temporary Items
 
 # Temp files
 *~
+
+# SARCoin conf for docker users
+conf/SARCoin.conf
+conf/bootstrap.dat
+.#*
+

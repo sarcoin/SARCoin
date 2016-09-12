@@ -1,0 +1,9 @@
+Dockerfile
+README
+INSTALL
+COPYING
+doc
+contrib
+*.md
+.git
+.git*
