@@ -4,4 +4,5 @@
 #enableaccounts=1
 #staking=0
 #server=1
-#rpcallowip=192.168.0.2
+rpcallowip=0.0.0.0/0
+rpcport=25901
